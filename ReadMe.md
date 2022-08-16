@@ -1,3 +1,3 @@
-![Logo_Normal@4x](https://user-images.githubusercontent.com/111374403/184989705-ec4e718a-9d8a-49c2-a8b1-c8b22bbecc60.png)
+![Clipboard_Thumbnail](https://user-images.githubusercontent.com/111374403/184989951-421e33c8-84fc-4552-8f69-3b3162ab72ed.png)
 
 Clipboard Plus is a Programm that allows you to edit the Content of your Clipboard. 
