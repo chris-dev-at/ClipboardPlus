@@ -1,1 +1,1 @@
-Clipboard Plus is a Programm that allows you to edit the Content of you Clipboard
+Clipboard Plus is a Programm that allows you to edit the Content of your Clipboard. 
