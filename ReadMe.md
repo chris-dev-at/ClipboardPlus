@@ -4,7 +4,10 @@ Clipboard Plus is a Programm that allows you to directly edit the Content of you
 
 Keybinds:
 Open Clipboard Editor     ==>   CTRL + SHIFT + C 
+
 Change Clipboard          ==>   CTRL + SHIFT + V
+
 Cancel Clipboard Editor   ==>   CTRL + SHIFT + X
+
 
 !Warning! No Menu-Functions in current Version 
