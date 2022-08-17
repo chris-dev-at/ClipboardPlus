@@ -5,7 +5,6 @@ C:\Users\admin\GitHub\public\ClipboardPlus\ClipboardPlus\bin\Debug\net6.0-window
 C:\Users\admin\GitHub\public\ClipboardPlus\ClipboardPlus\bin\Debug\net6.0-windows\ClipboardPlus.pdb
 C:\Users\admin\GitHub\public\ClipboardPlus\ClipboardPlus\bin\Debug\net6.0-windows\KeyboardHookLibrary.dll
 C:\Users\admin\GitHub\public\ClipboardPlus\ClipboardPlus\obj\Debug\net6.0-windows\ClipboardPlus.csproj.AssemblyReference.cache
-C:\Users\admin\GitHub\public\ClipboardPlus\ClipboardPlus\obj\Debug\net6.0-windows\ClipboardPlus.Form1.resources
 C:\Users\admin\GitHub\public\ClipboardPlus\ClipboardPlus\obj\Debug\net6.0-windows\ClipboardPlus.csproj.GenerateResource.cache
 C:\Users\admin\GitHub\public\ClipboardPlus\ClipboardPlus\obj\Debug\net6.0-windows\ClipboardPlus.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\admin\GitHub\public\ClipboardPlus\ClipboardPlus\obj\Debug\net6.0-windows\ClipboardPlus.AssemblyInfoInputs.cache
@@ -17,3 +16,6 @@ C:\Users\admin\GitHub\public\ClipboardPlus\ClipboardPlus\obj\Debug\net6.0-window
 C:\Users\admin\GitHub\public\ClipboardPlus\ClipboardPlus\obj\Debug\net6.0-windows\ClipboardPlus.pdb
 C:\Users\admin\GitHub\public\ClipboardPlus\ClipboardPlus\obj\Debug\net6.0-windows\ClipboardPlus.genruntimeconfig.cache
 C:\Users\admin\GitHub\public\ClipboardPlus\ClipboardPlus\obj\Debug\net6.0-windows\ref\ClipboardPlus.dll
+C:\Users\admin\GitHub\public\ClipboardPlus\ClipboardPlus\obj\Debug\net6.0-windows\ClipboardPlus.EditorForm.resources
+C:\Users\admin\GitHub\public\ClipboardPlus\ClipboardPlus\obj\Debug\net6.0-windows\ClipboardPlus.MenuForm.resources
+C:\Users\admin\GitHub\public\ClipboardPlus\ClipboardPlus\obj\Debug\net6.0-windows\ClipboardPlus.Properties.Resources.resources
