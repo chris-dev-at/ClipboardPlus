@@ -21,6 +21,13 @@ namespace ClipboardPlus
             {
                 MessageBox.Show("Ctrl+Shift+C detected");
             });
+
+            khm.RegisterHotkey(KeyboardHookLibrary.ModifierKeys.Control |
+            KeyboardHookLibrary.ModifierKeys.Shift, 0x56, () =>
+            {
+                MessageBox.Show("Ctrl+Shift+V detected");
+            });
+
             khm.Start();
         }
     }
