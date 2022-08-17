@@ -9,15 +9,6 @@ namespace ClipboardPlus
         public EditorForm()
         {
             InitializeComponent();
-
-            //Remove ControlBoxes and Icons
-            this.FormBorderStyle = FormBorderStyle.None;
-            this.ControlBox = false;
-            this.ShowIcon = false;
-            //Hide in Taskbar
-            this.ShowInTaskbar = false;
-            //Always on Top of other Applications
-            this.TopMost = true;
         }
 
         #region Class Variables
@@ -26,6 +17,7 @@ namespace ClipboardPlus
 
         //KeboardHookManager Instance
         KeyboardHookManager khm = new KeyboardHookManager();
+        Thread MenuThread;
 
         #endregion
 
@@ -50,17 +42,27 @@ namespace ClipboardPlus
         {
             /* KeyCodes https://docs.microsoft.com/en-us/windows/win32/inputdev/virtual-key-codes | https://www.codeproject.com/Articles/1273010/Global-Hotkeys-within-Desktop-Applications */
 
+            //CTRL + SHIFT + C  ==> Open Editor
             khm.RegisterHotkey(KeyboardHookLibrary.ModifierKeys.Control |
             KeyboardHookLibrary.ModifierKeys.Shift, 0x43, () =>
             {
                 Invoke(new Action(() => { this.Size = InitialSize; OpenEditor(); }));
             });
 
+            //CTRL + SHIFT + X  ==> Cancel Button
+            khm.RegisterHotkey(KeyboardHookLibrary.ModifierKeys.Control |
+            KeyboardHookLibrary.ModifierKeys.Shift, 0x58, () =>
+            {
+                Invoke(new Action(() => { CloseForm(); }));
+            });
+
+            //CTRL + SHIFT + V  ==> ChangeButton
             khm.RegisterHotkey(KeyboardHookLibrary.ModifierKeys.Control |
             KeyboardHookLibrary.ModifierKeys.Shift, 0x56, () =>
             {
-                Invoke(new Action(() => { this.Size = new Size(0, 0); }));
+                Invoke(new Action(() => { ChangeClipboard(); }));
             });
+
             khm.Start();
         }
 
@@ -83,9 +85,7 @@ namespace ClipboardPlus
         /// <param name="e"></param>
         private void change_btn_Click(object sender, EventArgs e)
         {
-            richTextBox1.SelectAll();
-            richTextBox1.Copy();
-            CloseForm();   
+            ChangeClipboard();
         }
         /// <summary>
         /// Executes when Cancel-Button is pressed.
@@ -94,7 +94,7 @@ namespace ClipboardPlus
         /// <param name="e"></param>
         private void cancel_btn_Click(object sender, EventArgs e)
         {
-            CloseForm();   
+            CancelClipboard();   
         }
         /// <summary>
         /// Executes when Menu-Button is pressed.
@@ -103,12 +103,7 @@ namespace ClipboardPlus
         /// <param name="e"></param>
         private void menu_btn_Click(object sender, EventArgs e)
         {
-            Thread t = new Thread(() => {
-                MenuForm menu = new MenuForm();
-                menu.ShowDialog();
-            });
-            t.SetApartmentState(ApartmentState.STA);
-            t.Start();
+            OpenMenu();
         }
 
         #endregion
@@ -116,7 +111,7 @@ namespace ClipboardPlus
         #region ControlFunctions
 
         /// <summary>
-        /// Executes when Editor is opened
+        /// Reveals/Opens the Editor
         /// </summary>
         void OpenEditor()
         {
@@ -125,11 +120,55 @@ namespace ClipboardPlus
         }
 
         /// <summary>
-        /// Executes when Editor is closed
+        /// Closes/Hides the Editor
         /// </summary>
         void CloseForm()
         {
             this.Size = new Size(0, 0);
+        }
+
+        /// <summary>
+        /// Changes the Clipboard Content
+        /// </summary>
+        void ChangeClipboard()
+        {
+            //If there is no Text in richTextBox then you cant copy it and the clipboard stays the same
+            if (richTextBox1.TextLength == 0)
+                Clipboard.Clear();
+            else
+            {
+                richTextBox1.SelectAll();
+                richTextBox1.Copy();
+            }
+            CloseForm();
+        }
+
+        /// <summary>
+        /// Cancels the Editor
+        /// </summary>
+        void CancelClipboard()
+        {
+            CloseForm();
+        }
+
+        /// <summary>
+        /// Opens the Menu
+        /// </summary>
+        void OpenMenu()
+        {
+            //prevents multiple instances of Menu to run
+            if (MenuThread == null || !MenuThread.IsAlive)
+            {
+                //Create new Thread to not Halt the EditorForm
+                MenuThread = new Thread(() =>
+                {
+                    MenuForm menu = new MenuForm();
+                    menu.ShowDialog();
+                    return;
+                });
+                MenuThread.SetApartmentState(ApartmentState.STA);
+                MenuThread.Start();
+            }
         }
 
         #endregion
@@ -161,5 +200,6 @@ namespace ClipboardPlus
         }
 
         #endregion
+
     }
 }

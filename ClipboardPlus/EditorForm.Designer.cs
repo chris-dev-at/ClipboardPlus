@@ -39,6 +39,7 @@
             // 
             this.richTextBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
             this.richTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.richTextBox1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.richTextBox1.Location = new System.Drawing.Point(22, 23);
             this.richTextBox1.Name = "richTextBox1";
             this.richTextBox1.Size = new System.Drawing.Size(795, 319);
@@ -111,13 +112,18 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(835, 409);
+            this.ControlBox = false;
             this.Controls.Add(this.menu_btn);
             this.Controls.Add(this.change_btn);
             this.Controls.Add(this.richTextBox1);
             this.Controls.Add(this.cancel_btn);
             this.DoubleBuffered = true;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "EditorForm";
+            this.ShowIcon = false;
+            this.ShowInTaskbar = false;
             this.Text = "EditorForm";
+            this.TopMost = true;
             this.TransparencyKey = System.Drawing.Color.White;
             this.Load += new System.EventHandler(this.EditorForm_Load);
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.EditorForm_MouseDown);
