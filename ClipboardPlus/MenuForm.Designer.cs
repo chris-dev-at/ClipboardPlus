@@ -30,15 +30,16 @@
         {
             this.exit_btn = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.close_btn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // exit_btn
             // 
-            this.exit_btn.Location = new System.Drawing.Point(25, 75);
+            this.exit_btn.Location = new System.Drawing.Point(25, 118);
             this.exit_btn.Name = "exit_btn";
-            this.exit_btn.Size = new System.Drawing.Size(75, 23);
+            this.exit_btn.Size = new System.Drawing.Size(105, 23);
             this.exit_btn.TabIndex = 0;
-            this.exit_btn.Text = "exit";
+            this.exit_btn.Text = "Exit Programm";
             this.exit_btn.UseVisualStyleBackColor = true;
             this.exit_btn.Click += new System.EventHandler(this.exit_btn_Click);
             // 
@@ -52,11 +53,22 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "Menu";
             // 
+            // close_btn
+            // 
+            this.close_btn.Location = new System.Drawing.Point(25, 79);
+            this.close_btn.Name = "close_btn";
+            this.close_btn.Size = new System.Drawing.Size(105, 23);
+            this.close_btn.TabIndex = 2;
+            this.close_btn.Text = "Close Menu";
+            this.close_btn.UseVisualStyleBackColor = true;
+            this.close_btn.Click += new System.EventHandler(this.close_btn_Click);
+            // 
             // MenuForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(835, 415);
+            this.Controls.Add(this.close_btn);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.exit_btn);
             this.Name = "MenuForm";
@@ -71,5 +83,6 @@
 
         private Button exit_btn;
         private Label label1;
+        private Button close_btn;
     }
 }

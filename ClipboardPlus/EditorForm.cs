@@ -18,6 +18,7 @@ namespace ClipboardPlus
         //KeboardHookManager Instance
         KeyboardHookManager khm = new KeyboardHookManager();
         Thread MenuThread;
+        public bool EditorOpen;
 
         #endregion
 
@@ -31,6 +32,7 @@ namespace ClipboardPlus
             InitialSize = Size;
             this.Size = new Size(0, 0);
             StartKeyhooker();
+            EditorOpen = false;
         }
 
         #region Keybind Management
@@ -42,25 +44,28 @@ namespace ClipboardPlus
         {
             /* KeyCodes https://docs.microsoft.com/en-us/windows/win32/inputdev/virtual-key-codes | https://www.codeproject.com/Articles/1273010/Global-Hotkeys-within-Desktop-Applications */
 
-            //CTRL + SHIFT + C  ==> Open Editor
+            //CTRL + SHIFT + C  ==> Open Editor & Change Clipboard
             khm.RegisterHotkey(KeyboardHookLibrary.ModifierKeys.Control |
             KeyboardHookLibrary.ModifierKeys.Shift, 0x43, () =>
             {
-                Invoke(new Action(() => { this.Size = InitialSize; OpenEditor(); }));
+                Invoke(new Action(() => {
+                    //If Editor is not open then open it
+                    if (!EditorOpen)
+                    {
+                        this.Size = InitialSize; 
+                        OpenEditor();
+                    }
+                    //If Editor is open then change the Clipboard
+                    else
+                        ChangeClipboard();
+                }));
             });
 
-            //CTRL + SHIFT + X  ==> Cancel Button
+            //CTRL + SHIFT + C  ==> Cancel Editor
             khm.RegisterHotkey(KeyboardHookLibrary.ModifierKeys.Control |
             KeyboardHookLibrary.ModifierKeys.Shift, 0x58, () =>
             {
-                Invoke(new Action(() => { CloseForm(); }));
-            });
-
-            //CTRL + SHIFT + V  ==> ChangeButton
-            khm.RegisterHotkey(KeyboardHookLibrary.ModifierKeys.Control |
-            KeyboardHookLibrary.ModifierKeys.Shift, 0x56, () =>
-            {
-                Invoke(new Action(() => { ChangeClipboard(); }));
+                Invoke(new Action(() => { CancelClipboard(); }));
             });
 
             khm.Start();
@@ -115,6 +120,7 @@ namespace ClipboardPlus
         /// </summary>
         void OpenEditor()
         {
+            EditorOpen = true;
             richTextBox1.Clear();
             richTextBox1.Paste();
         }
@@ -122,8 +128,9 @@ namespace ClipboardPlus
         /// <summary>
         /// Closes/Hides the Editor
         /// </summary>
-        void CloseForm()
+        void CloseEditor()
         {
+            EditorOpen = false;
             this.Size = new Size(0, 0);
         }
 
@@ -140,7 +147,7 @@ namespace ClipboardPlus
                 richTextBox1.SelectAll();
                 richTextBox1.Copy();
             }
-            CloseForm();
+            CloseEditor();
         }
 
         /// <summary>
@@ -148,7 +155,7 @@ namespace ClipboardPlus
         /// </summary>
         void CancelClipboard()
         {
-            CloseForm();
+            CloseEditor();
         }
 
         /// <summary>
@@ -159,11 +166,14 @@ namespace ClipboardPlus
             //prevents multiple instances of Menu to run
             if (MenuThread == null || !MenuThread.IsAlive)
             {
+                this.TopMost = false;
                 //Create new Thread to not Halt the EditorForm
                 MenuThread = new Thread(() =>
                 {
                     MenuForm menu = new MenuForm();
                     menu.ShowDialog();
+                    //Try Catch if Application is exitted
+                    try {  Invoke(new Action(() => { this.TopMost = true; })); } catch { }               
                     return;
                 });
                 MenuThread.SetApartmentState(ApartmentState.STA);
