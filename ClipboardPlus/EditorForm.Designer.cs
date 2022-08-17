@@ -120,6 +120,9 @@
             this.Text = "EditorForm";
             this.TransparencyKey = System.Drawing.Color.White;
             this.Load += new System.EventHandler(this.EditorForm_Load);
+            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.EditorForm_MouseDown);
+            this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.EditorForm_MouseMove);
+            this.MouseUp += new System.Windows.Forms.MouseEventHandler(this.EditorForm_MouseUp);
             this.ResumeLayout(false);
 
         }
