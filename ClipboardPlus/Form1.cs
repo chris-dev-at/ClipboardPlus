@@ -13,6 +13,7 @@ namespace ClipboardPlus
         {
             //KeyCodes https://docs.microsoft.com/en-us/windows/win32/inputdev/virtual-key-codes
 
+            //KeyHookLibrary to listening for Key combinations
             var khm = new KeyboardHookManager();
 
             khm.RegisterHotkey(KeyboardHookLibrary.ModifierKeys.Control |
