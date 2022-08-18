@@ -35,6 +35,7 @@ namespace ClipboardPlus
             EditorOpen = false;
         }
 
+
         #region Keybind Management
 
         /// <summary>
@@ -51,8 +52,7 @@ namespace ClipboardPlus
                 Invoke(new Action(() => {
                     //If Editor is not open then open it
                     if (!EditorOpen)
-                    {
-                        this.Size = InitialSize; 
+                    { 
                         OpenEditor();
                     }
                     //If Editor is open then change the Clipboard
@@ -61,7 +61,7 @@ namespace ClipboardPlus
                 }));
             });
 
-            //CTRL + SHIFT + C  ==> Cancel Editor
+            //CTRL + SHIFT + X  ==> Cancel Editor
             khm.RegisterHotkey(KeyboardHookLibrary.ModifierKeys.Control |
             KeyboardHookLibrary.ModifierKeys.Shift, 0x58, () =>
             {
@@ -120,6 +120,7 @@ namespace ClipboardPlus
         /// </summary>
         void OpenEditor()
         {
+            this.Size = InitialSize;
             EditorOpen = true;
             richTextBox1.Clear();
             richTextBox1.Paste();
