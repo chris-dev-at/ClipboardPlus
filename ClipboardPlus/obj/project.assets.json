@@ -8,19 +8,24 @@
     "net6.0-windows7.0": []
   },
   "packageFolders": {
-    "C:\\Users\\Mulhamsth\\.nuget\\packages\\": {}
+    "C:\\Users\\admin\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Mulhamsth\\github\\ClipboardPlus\\ClipboardPlus\\ClipboardPlus.csproj",
+      "projectUniqueName": "C:\\Users\\admin\\GitHub\\public\\ClipboardPlus\\ClipboardPlus\\ClipboardPlus.csproj",
       "projectName": "ClipboardPlus",
-      "projectPath": "C:\\Users\\Mulhamsth\\github\\ClipboardPlus\\ClipboardPlus\\ClipboardPlus.csproj",
-      "packagesPath": "C:\\Users\\Mulhamsth\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Mulhamsth\\github\\ClipboardPlus\\ClipboardPlus\\obj\\",
+      "projectPath": "C:\\Users\\admin\\GitHub\\public\\ClipboardPlus\\ClipboardPlus\\ClipboardPlus.csproj",
+      "packagesPath": "C:\\Users\\admin\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\admin\\GitHub\\public\\ClipboardPlus\\ClipboardPlus\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "C:\\Users\\Mulhamsth\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -63,7 +68,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.200\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.302\\RuntimeIdentifierGraph.json"
       }
     }
   }

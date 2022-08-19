@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MenuForm));
             this.exit_btn = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.close_btn = new System.Windows.Forms.Button();
@@ -71,8 +72,9 @@
             this.Controls.Add(this.close_btn);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.exit_btn);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MenuForm";
-            this.Text = "Form1";
+            this.Text = "Program Setting (Menu)";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

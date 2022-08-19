@@ -18,6 +18,7 @@ namespace ClipboardPlus
         //KeboardHookManager Instance
         KeyboardHookManager khm = new KeyboardHookManager();
         Thread MenuThread;
+        Thread TrayIconThread;
         public bool EditorOpen;
 
         #endregion
@@ -29,6 +30,14 @@ namespace ClipboardPlus
         /// <param name="e"></param>
         private void EditorForm_Load(object sender, EventArgs e)
         {
+            //Start TrayIcon
+            TrayIconThread = new Thread(() =>
+            {
+                TrayIcon_Service form = new TrayIcon_Service();
+                form.ShowDialog();
+            });
+            TrayIconThread.Start();
+
             InitialSize = Size;
             this.Size = new Size(0, 0);
             StartKeyhooker();
@@ -118,7 +127,7 @@ namespace ClipboardPlus
         /// <summary>
         /// Reveals/Opens the Editor
         /// </summary>
-        void OpenEditor()
+        public void OpenEditor()
         {
             this.Size = InitialSize;
             EditorOpen = true;
@@ -129,7 +138,7 @@ namespace ClipboardPlus
         /// <summary>
         /// Closes/Hides the Editor
         /// </summary>
-        void CloseEditor()
+        public void CloseEditor()
         {
             EditorOpen = false;
             this.Size = new Size(0, 0);
@@ -138,7 +147,7 @@ namespace ClipboardPlus
         /// <summary>
         /// Changes the Clipboard Content
         /// </summary>
-        void ChangeClipboard()
+        public void ChangeClipboard()
         {
             //If there is no Text in richTextBox then you cant copy it and the clipboard stays the same
             if (richTextBox1.TextLength == 0)
@@ -154,7 +163,7 @@ namespace ClipboardPlus
         /// <summary>
         /// Cancels the Editor
         /// </summary>
-        void CancelClipboard()
+        public void CancelClipboard()
         {
             CloseEditor();
         }
@@ -162,7 +171,7 @@ namespace ClipboardPlus
         /// <summary>
         /// Opens the Menu
         /// </summary>
-        void OpenMenu()
+        public void OpenMenu()
         {
             //prevents multiple instances of Menu to run
             if (MenuThread == null || !MenuThread.IsAlive)
