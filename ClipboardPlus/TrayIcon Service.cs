@@ -18,16 +18,26 @@ namespace ClipboardPlus
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Main Function of TrayIcon_Service
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void TrayIcon_Service_Load(object sender, EventArgs e)
         {
             //take the icon of the Executeable
             notifyIcon.Icon = Icon.ExtractAssociatedIcon("ClipboardPlus.exe");
+
             notifyIcon.Visible = true;
             notifyIcon.ContextMenuStrip = TrayIconContextStripMenu;
         }
 
+
+        #region MenuButtons
+
         private void notifyIcon_MouseClick(object sender, MouseEventArgs e)
         {
+            //show the contextstrip right next to the mouse
             notifyIcon.ContextMenuStrip.Show(new Point(Cursor.Position.X + 1, Cursor.Position.Y + 1));
         }
 
@@ -44,6 +54,7 @@ namespace ClipboardPlus
         private void searchForUpdatesToolStripMenuItem_Click(object sender, EventArgs e)
         {
             //Todo
+            //Make Static Function for Searching for Updates and redirect to it here
         }
 
         private void githubPageToolStripMenuItem_Click(object sender, EventArgs e)
@@ -65,5 +76,7 @@ namespace ClipboardPlus
         {
             Application.Exit();
         }
+
+        #endregion
     }
 }
