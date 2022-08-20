@@ -40,7 +40,7 @@
             this.exit_btn.Name = "exit_btn";
             this.exit_btn.Size = new System.Drawing.Size(105, 23);
             this.exit_btn.TabIndex = 0;
-            this.exit_btn.Text = "Exit Programm";
+            this.exit_btn.Text = "Exit Program";
             this.exit_btn.UseVisualStyleBackColor = true;
             this.exit_btn.Click += new System.EventHandler(this.exit_btn_Click);
             // 
