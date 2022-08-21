@@ -41,3 +41,4 @@ C:\Users\Mulhamsth\github\ClipboardPlus\ClipboardPlus\obj\Debug\net6.0-windows\C
 C:\Users\Mulhamsth\github\ClipboardPlus\ClipboardPlus\obj\Debug\net6.0-windows\ClipboardPlus.genruntimeconfig.cache
 C:\Users\Mulhamsth\github\ClipboardPlus\ClipboardPlus\obj\Debug\net6.0-windows\ref\ClipboardPlus.dll
 C:\Users\admin\GitHub\public\ClipboardPlus\ClipboardPlus\obj\Debug\net6.0-windows\ClipboardPlus.TrayIcon_Service.resources
+C:\Users\admin\GitHub\public\ClipboardPlus\ClipboardPlus\bin\Debug\net6.0-windows\ClipboardManagerLibrary.dll

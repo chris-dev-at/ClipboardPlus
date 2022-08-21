@@ -8,10 +8,19 @@
     ".NETCoreApp,Version=v6.0": {
       "ClipboardPlus/1.0.0": {
         "dependencies": {
+          "ClipboardManagerLibrary": "1.0.0.0",
           "KeyboardHookLibrary": "1.0.0.0"
         },
         "runtime": {
           "ClipboardPlus.dll": {}
+        }
+      },
+      "ClipboardManagerLibrary/1.0.0.0": {
+        "runtime": {
+          "ClipboardManagerLibrary.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
         }
       },
       "KeyboardHookLibrary/1.0.0.0": {
@@ -27,6 +36,11 @@
   "libraries": {
     "ClipboardPlus/1.0.0": {
       "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "ClipboardManagerLibrary/1.0.0.0": {
+      "type": "reference",
       "serviceable": false,
       "sha512": ""
     },

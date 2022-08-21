@@ -41,7 +41,12 @@ namespace ClipboardPlus
             InitialSize = Size;
             this.Size = new Size(0, 0);
             StartKeyhooker();
+
+            //Close by default and hide in ALT + TAB Window;
             EditorOpen = false;
+
+            //Look away please! Thanks :) (This is by no means efficient and never do this!!!)
+            new Thread(() => { Invoke(new Action(delegate () { Thread.Sleep(1000); this.Hide(); })); }).Start();
         }
 
 
@@ -130,6 +135,7 @@ namespace ClipboardPlus
         public void OpenEditor()
         {
             this.Size = InitialSize;
+            this.Show();
             EditorOpen = true;
             richTextBox1.Clear();
             richTextBox1.Paste();
@@ -142,6 +148,7 @@ namespace ClipboardPlus
         {
             EditorOpen = false;
             this.Size = new Size(0, 0);
+            this.Hide();
         }
 
         /// <summary>

@@ -16,6 +16,8 @@ namespace ClipboardPlus
         public TrayIcon_Service()
         {
             InitializeComponent();
+            //hide it
+            this.Size = new Size(0, 0);
         }
 
         /// <summary>
@@ -30,6 +32,7 @@ namespace ClipboardPlus
 
             notifyIcon.Visible = true;
             notifyIcon.ContextMenuStrip = TrayIconContextStripMenu;
+            //this.Hide(); 
         }
 
 
