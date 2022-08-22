@@ -32,11 +32,12 @@
             this.exit_btn = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.close_btn = new System.Windows.Forms.Button();
+            this.startup_btn = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // exit_btn
             // 
-            this.exit_btn.Location = new System.Drawing.Point(25, 118);
+            this.exit_btn.Location = new System.Drawing.Point(25, 137);
             this.exit_btn.Name = "exit_btn";
             this.exit_btn.Size = new System.Drawing.Size(105, 23);
             this.exit_btn.TabIndex = 0;
@@ -64,11 +65,23 @@
             this.close_btn.UseVisualStyleBackColor = true;
             this.close_btn.Click += new System.EventHandler(this.close_btn_Click);
             // 
+            // startup_btn
+            // 
+            this.startup_btn.AutoSize = true;
+            this.startup_btn.Location = new System.Drawing.Point(25, 112);
+            this.startup_btn.Name = "startup_btn";
+            this.startup_btn.Size = new System.Drawing.Size(101, 19);
+            this.startup_btn.TabIndex = 4;
+            this.startup_btn.Text = "run on startup";
+            this.startup_btn.UseVisualStyleBackColor = true;
+            this.startup_btn.CheckedChanged += new System.EventHandler(this.startup_btn_CheckedChanged);
+            // 
             // MenuForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(835, 415);
+            this.Controls.Add(this.startup_btn);
             this.Controls.Add(this.close_btn);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.exit_btn);
@@ -86,5 +99,6 @@
         private Button exit_btn;
         private Label label1;
         private Button close_btn;
+        private CheckBox startup_btn;
     }
 }
