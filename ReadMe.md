@@ -9,3 +9,8 @@
 Keybinds:
 > Open Clipboard Editor & Change Clipboard ==> CTRL + SHIFT + C <br>
 > Cancel Clipboard Editor ==> CTRL + SHIFT + X
+
+
+<br>
+<br>
+<h3>Developement Break till 26.08.2022</h3>
