@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using Microsoft.Win32;
 using KeyboardHookLibrary;
 
 namespace ClipboardPlus
@@ -44,6 +45,10 @@ namespace ClipboardPlus
 
             //Close by default and hide in ALT + TAB Window;
             EditorOpen = false;
+
+            //Run the Application on Startup
+            RegistryKey reg = Registry.CurrentUser.OpenSubKey("SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run", true);
+            reg.SetValue("ClipboardPlus", Application.ExecutablePath.ToString());
 
             //Look away please! Thanks :) (This is by no means efficient and never do this!!!)
             new Thread(() => { Invoke(new Action(delegate () { Thread.Sleep(1000); this.Hide(); })); }).Start();

@@ -26,11 +26,6 @@ namespace ClipboardPlus
 
         private void startup_btn_CheckedChanged(object sender, EventArgs e)
         {
-            if (startup_btn.Checked)
-            {
-                RegistryKey reg = Registry.CurrentUser.OpenSubKey("SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run", true);
-                reg.SetValue("ClipboardPlus", Application.ExecutablePath.ToString());
-            }
         }
     }
 }
