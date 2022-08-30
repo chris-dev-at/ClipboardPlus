@@ -6,7 +6,7 @@ namespace ClipboardPlus
     public partial class MenuForm : Form
     {
         //RunOnStartup Variables
-        public bool RunOnStartup;
+        public bool RunOnStartup = false;
         private static readonly string StartupKey = "SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run";
         private static readonly string StartupValue = Process.GetCurrentProcess().ProcessName;
         RegistryKey startupKey;
@@ -22,9 +22,7 @@ namespace ClipboardPlus
             startupKey = Registry.CurrentUser.OpenSubKey(StartupKey, true);
             
             //Check if Value Exists
-            if(startupKey.GetValue(StartupValue) == null)
-                RunOnStartup = false;
-            else
+            if(startupKey.GetValue(StartupValue) != null)
                 RunOnStartup = true;
             
             UpdateStartupButton();
@@ -48,7 +46,6 @@ namespace ClipboardPlus
             if (RunOnStartup)
             {
                 RunOnStartup_btn.Text = "Remove Startup Hook";
-                startupKey.SetValue(StartupValue, Application.ExecutablePath.ToString() + " -autostarted");
             }
             else
             {
@@ -59,9 +56,10 @@ namespace ClipboardPlus
         {
             RunOnStartup = !RunOnStartup;
             if (!RunOnStartup)
-            {
                 startupKey.DeleteValue(StartupValue);
-            }
+            else
+                startupKey.SetValue(StartupValue, Application.ExecutablePath.ToString() + " -autostarted");
+
             UpdateStartupButton();
         }
     }

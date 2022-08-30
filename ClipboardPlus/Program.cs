@@ -17,7 +17,7 @@ namespace ClipboardPlus
         ///  The main entry point for the application.
         /// </summary>
         [STAThread]
-        public static void Main()
+        public static void Main(string[] args)
         {
             //prevent two applications starting
             if (Process.GetProcessesByName(Process.GetCurrentProcess().ProcessName).Length > 1)
