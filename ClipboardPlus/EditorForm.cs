@@ -57,7 +57,7 @@ namespace ClipboardPlus
         /// </summary>
         void StartKeyhooker()
         {
-            /* KeyCodes https://docs.microsoft.com/en-us/windows/win32/inputdev/virtual-key-codes | https://www.codeproject.com/Articles/1273010/Global-Hotkeys-within-Desktop-Applications */
+            /* KeyCodes https://docs.microsoft.com/en-us/windows/win32/inputdev/virtual-key-codes | https://www.codeproject.com/Articles/1273010/Global-Hotkeys-within-Desktop-Applications | Point of Intrest: https://www.codeproject.com/Articles/19004/A-Simple-C-Global-Low-Level-Keyboard-Hook */
 
             //CTRL + SHIFT + C  ==> Open Editor & Change Clipboard
             khm.RegisterHotkey(KeyboardHookLibrary.ModifierKeys.Control |
