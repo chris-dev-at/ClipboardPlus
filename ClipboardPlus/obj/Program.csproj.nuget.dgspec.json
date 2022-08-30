@@ -1,15 +1,15 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Mulhamsth\\github\\ClipboardPlus\\ClipboardPlus\\ClipboardPlus.csproj": {}
+    "C:\\Users\\Mulhamsth\\github\\ClipboardPlus\\ClipboardPlus\\Program.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Mulhamsth\\github\\ClipboardPlus\\ClipboardPlus\\ClipboardPlus.csproj": {
+    "C:\\Users\\Mulhamsth\\github\\ClipboardPlus\\ClipboardPlus\\Program.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Mulhamsth\\github\\ClipboardPlus\\ClipboardPlus\\ClipboardPlus.csproj",
-        "projectName": "ClipboardPlus",
-        "projectPath": "C:\\Users\\Mulhamsth\\github\\ClipboardPlus\\ClipboardPlus\\ClipboardPlus.csproj",
+        "projectUniqueName": "C:\\Users\\Mulhamsth\\github\\ClipboardPlus\\ClipboardPlus\\Program.csproj",
+        "projectName": "Program",
+        "projectPath": "C:\\Users\\Mulhamsth\\github\\ClipboardPlus\\ClipboardPlus\\Program.csproj",
         "packagesPath": "C:\\Users\\Mulhamsth\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\Mulhamsth\\github\\ClipboardPlus\\ClipboardPlus\\obj\\",
         "projectStyle": "PackageReference",
