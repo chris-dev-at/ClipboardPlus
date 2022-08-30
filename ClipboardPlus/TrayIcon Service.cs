@@ -28,7 +28,7 @@ namespace ClipboardPlus
         private void TrayIcon_Service_Load(object sender, EventArgs e)
         {
             //take the icon of the Executeable
-            notifyIcon.Icon = Icon.ExtractAssociatedIcon("ClipboardPlus.exe");
+            notifyIcon.Icon = Icon.ExtractAssociatedIcon(Application.ExecutablePath);
 
             notifyIcon.Visible = true;
             notifyIcon.ContextMenuStrip = TrayIconContextStripMenu;
